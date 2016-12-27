@@ -1,17 +1,33 @@
 <html>
-  <head></head>
-  <body>
-  	<p>
-      Enter a string to cipher!
-    </p>
-    <p>
-      Cipher: <%= cipher %>
-    </p>
-  </body>
 
-  <form>
-  	<input type='text' name='string' />
-  	<input type='submit' value='Cipher!' />
-	</form>
+  <head>
+    <title>Caesar Cipher Reloaded</title>
+    <link rel="stylesheet" type="text/css" href="/index.css">
+  </head>
+
+  <body>
+
+    <h1>Caesar Cipher</h1>
+
+    <img class="caesar" src="caesar.jpg" alt="Julius Caesar.jpg">
+
+    <form>
+    	<p>
+        Enter text to cipher:
+        <input class="cipher" type="text" name="string" />
+      </p>
+      <p>
+        Enter a shift factor:
+        <input class="shift" type="text" name="shift" />
+      </p>
+      <p>
+        <input class="button" type="submit" value="Cipher!" />
+      </p>
+    </form>
+
+    <p></p>
+    <h2>Ciphered text: <%= cipher %></h2>
+
+  </body>
 
 </html>

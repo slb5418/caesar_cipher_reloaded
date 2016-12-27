@@ -1,8 +1,11 @@
 require 'sinatra'
 
 get '/' do 
-	string = params['string'] ? params['string'] : "default"
-	cipher = caesar_cipher(string, 5)
+	string = params['string']
+	shift = params['shift'].to_i
+	if string != nil && shift != nil
+		cipher = caesar_cipher(string, shift)
+	end
 	erb :index, :locals => {:cipher => cipher}
 end
 
@@ -35,6 +38,6 @@ def caesar_cipher(string, shift)
 	return cipher
 end
 
-# if __FILE__ == $0
-# 	caesar_cipher("What a string!", 5)
-# end
+if __FILE__ == $0
+	caesar_cipher("What a string!", 5)
+end
